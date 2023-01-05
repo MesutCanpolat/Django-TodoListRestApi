@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -15,3 +16,4 @@ class Todo(models.Model):
         choices=TodoStatus.choices,
         default=TodoStatus.todo,
     )
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
